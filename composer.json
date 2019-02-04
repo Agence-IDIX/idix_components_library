@@ -1,0 +1,16 @@
+{
+  "name": "idix/idix_components_library",
+  "type": "drupal-custom-module",
+  "description": "Manage components library.",
+  "keywords": ["Drupal", "components", "library"],
+  "authors": [
+    {
+      "name": "Thierry Langlois",
+      "email": "thierry.langlois@idix.fr",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "drupal/core": "8.*"
+  }
+}
