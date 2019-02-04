@@ -1,0 +1,12 @@
+description: 'Drupal Console generated command.'
+options: {}
+arguments: {}
+questions:
+  component: 'Enter the component name (human readable)'
+  class-name: 'Enter the component class name'
+  theme: 'Enter the theme name'
+  directory: 'Enter the component path (relative to the theme)'
+  twig: 'Do you want to generate a twig file?'
+  javascript: 'Do you want to generate a javascript file?'
+messages:
+    success: 'I am a new generated command.'

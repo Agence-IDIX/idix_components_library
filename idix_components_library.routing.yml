@@ -1,0 +1,8 @@
+idix_components_library.page:
+  path: /idix_components_library/{component_id}
+  defaults:
+    _controller: Drupal\idix_components_library\Controller\StyleguideController::page
+    _title_callback: \Drupal\idix_components_library\Controller\StyleguideController::getTitle
+    component_id: ''
+  requirements:
+    _access: 'TRUE'

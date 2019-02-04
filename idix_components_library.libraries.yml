@@ -1,0 +1,32 @@
+global:
+  css:
+    theme:
+      css/global.css: {}
+
+list:
+  css:
+    theme:
+      css/list.css: {}
+  js:
+    js/list.js: {}
+  dependencies:
+    - core/drupal
+
+detail:
+  css:
+    theme:
+      css/detail.css: {}
+
+prism:
+  css:
+    theme:
+      prism/prism.css: {}
+  js:
+    prism/prism.js: {}
+
+usage:
+  js:
+    js/usage.js: {}
+  dependencies:
+    - core/drupal
+    - idix_components_library/prism

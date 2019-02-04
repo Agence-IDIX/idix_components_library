@@ -1,0 +1,5 @@
+name: 'IDIX Components library'
+type: module
+description: 'Automatic components styleguide.'
+core: 8.x
+package: 'IDIX'

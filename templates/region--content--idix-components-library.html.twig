@@ -1,0 +1,5 @@
+{% for key, item in elements %}
+  {% if item['#plugin_id'] == 'system_main_block' or '_messages' in key %}
+    {{ item }}
+  {% endif %}
+{% endfor %}

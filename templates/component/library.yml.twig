@@ -1,0 +1,12 @@
+{% set baseFile = directory ~ '/' ~ machine_name ~ '/' ~ machine_name %}
+
+{{ machine_name }}:
+  css:
+    theme:
+      {{ baseFile }}.css: {}
+{% if javascript %}
+  js:
+    {{ baseFile }}.js: {}
+  dependencies:
+    - core/drupal
+{% endif %}

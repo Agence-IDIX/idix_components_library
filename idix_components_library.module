@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Contains idix_components_library.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function idix_components_library_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the idix_components_library module.
+    case 'help.page.idix_components_library':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Automatic components styleguide generator.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function idix_components_library_module_implements_alter(&$implementations, $hook) {
+  switch ($hook) {
+    case 'theme_suggestions_alter':
+      $group = $implementations['idix_components_library'];
+      unset($implementations['idix_components_library']);
+      $implementations['idix_components_library'] = $group;
+      break;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function idix_components_library_theme_suggestions_alter(array &$suggestions, array $variables, $hook){
+  if (\Drupal::routeMatch()->getRouteName() == 'idix_components_library.page') {
+    if ($hook == 'page') {
+      $suggestions[] = 'page__idix_components_library';
+    }
+    if ($hook == 'region') {
+      $suggestions[] = 'region__' . $variables['elements']['#region'] . '__idix_components_library';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function idix_components_library_theme($existing, $type, $theme, $path) {
+  return [
+    'page__idix_components_library' =>  [
+      'template' => 'page--idix-components-library',
+      'base hook' => 'page'
+    ],
+    'region__content__idix_components_library' =>  [
+      'template' => 'region--content--idix-components-library',
+      'base hook' => 'region'
+    ]
+  ];
+}

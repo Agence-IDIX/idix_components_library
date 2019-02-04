@@ -1,0 +1,34 @@
+name: {{ component }}
+
+{% if twig %}
+variables:
+  -
+    name: my_var
+    type: string
+    default: "''"
+    description: The variable description
+{% endif %}
+
+{% if twig %}
+samples:
+  -
+    name: Sample with variables only (Twig file is automatically rendered)
+    variables:
+      my_var: custom variables
+{% else %}
+samples:
+  -
+    name: Sample with direct output
+    template: |
+      {% raw %}{% set my_var = 'custom variables' %}{% endraw %}
+      <div class="{{ machine_name }}">My Twig template with {% raw %}{{ my_var }}{% endraw %}</div>
+{% endif %}
+
+overrides:
+  css: |
+    .{{ machine_name }} {
+      max-width: 200px;
+    }
+
+readme: |
+  Some useful infos...

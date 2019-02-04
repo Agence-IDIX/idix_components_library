@@ -1,0 +1,21 @@
+.icl_component-list > ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+}
+
+.icl_component-list a {
+  display: block;
+  padding: 5px;
+}
+
+.icl_component-list a:hover {
+  text-decoration: none;
+}
+
+.icl_search {
+  padding: 5px 10px;
+  width: 100%;
+  max-width: 300px;
+}
