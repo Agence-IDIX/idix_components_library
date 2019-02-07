@@ -250,7 +250,8 @@ class StyleguideController extends ControllerBase {
       }
 
       $twig_path =  $component['id'] . '/' . $component['id'] . '.twig';
-      $component['twig'] = file_exists($basePath . '/' . $twig_path) ? '@' . $componentsDir . '/' . $twig_path : FALSE;
+      $namespace = '@' . $activeTheme->getName() . '_' . $componentsDir;
+      $component['twig'] = file_exists($basePath . '/' . $twig_path) ? $namespace . '/' . $twig_path : FALSE;
 
       $components[] = $component;
     }
