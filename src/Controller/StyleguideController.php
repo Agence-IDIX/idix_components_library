@@ -85,7 +85,7 @@ class StyleguideController extends ControllerBase {
       elseif ($component['twig']) {
         $view['#template'] = "{% include '" . $component['twig'] . "' only %}";
         if (isset($sample['variables'])) {
-          $view['#template'] = "{% include '" . $component['twig'] . "' with " . json_encode($sample['variables'], JSON_PRETTY_PRINT) . " only %}";
+          $view['#template'] = "{% include '" . $component['twig'] . "' with " . json_encode($sample['variables'], JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES) . " only %}";
         }
         $usage = $view['#template'];
         $usage_language = 'twig';
