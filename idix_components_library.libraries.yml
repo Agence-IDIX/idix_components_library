@@ -23,3 +23,7 @@ prism:
       prism/prism.css: {}
   js:
     prism/prism.js: {}
+
+fullscreen:
+  js:
+    js/fullscreen.js: {}

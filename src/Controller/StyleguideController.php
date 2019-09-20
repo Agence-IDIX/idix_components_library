@@ -112,6 +112,7 @@ class StyleguideController extends ControllerBase {
           'view' => [
             '#type' => 'container',
             '#attributes' => ['class' => ['icl_component-sample_view']],
+            '#attached' => ['library' => ['idix_components_library/fullscreen']],
             'content' => $view
           ],
           'usage' => $usage
