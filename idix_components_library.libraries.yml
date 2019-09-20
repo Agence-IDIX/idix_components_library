@@ -23,10 +23,3 @@ prism:
       prism/prism.css: {}
   js:
     prism/prism.js: {}
-
-usage:
-  js:
-    js/usage.js: {}
-  dependencies:
-    - core/drupal
-    - idix_components_library/prism

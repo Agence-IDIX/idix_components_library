@@ -1,9 +1,21 @@
 body.path-idix-components-library {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .icl_wrapper {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: auto;
   padding: 20px;
+}
+
+.icl_wrapper summary {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+}
+
+.icl_wrapper pre[class*="language-"] {
+  margin-top: 0;
+  border-radius: 0;
 }

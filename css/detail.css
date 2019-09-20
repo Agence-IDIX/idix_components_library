@@ -21,19 +21,12 @@
   border-radius: 5px;
 }
 
-
 .icl_variables-toggle {
   background-color: #fff;
 }
 
 .icl_variables-toggle .details-wrapper {
   overflow: auto;
-}
-
-.icl_variables-toggle summary {
-  padding: 10px;
-  cursor: pointer;
-  border: 1px solid #e5e5e5;
 }
 
 .icl_variables-toggle[open] summary {
@@ -64,7 +57,8 @@
 .icl_variables-table td.name,
 .icl_variables-table td.type,
 .icl_variables-table td.default {
-  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
 }
 
 .icl_variables-table td.default pre {
@@ -73,6 +67,13 @@
 
 .icl_variables-table .description {
   width: 60%;
+}
+
+.icl_component-sample_details {
+  margin: 10px 0;
+  background-color: #fff;
+  box-shadow: 0 0 20px #e5e5e5;
+  border-radius: 5px;
 }
 
 .icl_component-sample_view {

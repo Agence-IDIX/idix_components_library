@@ -93,8 +93,12 @@ class StyleguideController extends ControllerBase {
 
       if ($usage) {
         $usage = [
+          '#type' => 'details',
+          '#title' => 'Code',
+          '#open' => FALSE,
+          '#attributes' => ['class' => ['icl_component-sample_details']],
           '#markup' => '<pre class="icl_component-sample_usage"><code class="language-' . $usage_language . '">' . $usage . '</code></pre>',
-          '#attached' => ['library' => ['idix_components_library/usage']]
+          '#attached' => ['library' => ['idix_components_library/prism']]
         ];
       }
 
@@ -169,6 +173,12 @@ class StyleguideController extends ControllerBase {
           'back' => $back_link,
         ]
       ],
+      'overrides' => !empty($overrides) ? $overrides : [],
+      'samples' => !empty($samples) ? [
+        '#theme' => 'item_list',
+        '#items' => $samples,
+        '#wrapper_attributes' => ['class' => ['icl_component-samples']]
+      ] : [],
       'variables' => !empty($variablesRows) ? [
         '#type' => 'details',
         '#title' => 'Variables',
@@ -197,12 +207,6 @@ class StyleguideController extends ControllerBase {
           ],
           '#rows' => $variablesRows
         ]
-      ] : [],
-      'overrides' => !empty($overrides) ? $overrides : [],
-      'samples' => !empty($samples) ? [
-        '#theme' => 'item_list',
-        '#items' => $samples,
-        '#wrapper_attributes' => ['class' => ['icl_component-samples']]
       ] : [],
       'readme' => !empty($readme) ? [
         '#markup' => '<h2>Readme</h2>',
