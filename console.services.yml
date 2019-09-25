@@ -1,11 +1,19 @@
 services:
   idix_components_library.idix_components_library_generate_component:
     class: Drupal\idix_components_library\Command\ComponentCommand
-    arguments: ['@idix_components_library.idix_components_library_generate_component_generator', '@console.extension_manager', '@console.string_converter', '@console.validator', '@app.root']
+    arguments:
+      [
+        "@idix_components_library.idix_components_library_generate_component_generator",
+        "@console.extension_manager",
+        "@console.string_converter",
+        "@console.validator",
+        "@console.chain_queue",
+        "@app.root",
+      ]
     tags:
       - { name: drupal.command }
   idix_components_library.idix_components_library_generate_component_generator:
     class: Drupal\idix_components_library\Generator\ComponentGenerator
-    arguments: ['@console.extension_manager', '@console.renderer']
+    arguments: ["@console.extension_manager", "@console.renderer"]
     tags:
       - { name: drupal.generator }

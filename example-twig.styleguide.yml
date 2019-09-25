@@ -1,0 +1,37 @@
+name: Object ratio
+
+variables:
+  - name: content
+    type: string|array
+    default: "'' (empty)"
+    description: Contenu HTML (render array ou markup).
+  - name: ratio
+    type: string
+    default: "'16-9'"
+    description: Ration de l'élément à afficher.
+  - name: attr
+    type: array
+    default: "[]"
+    description: Attributs HTML de l'élément.
+
+samples:
+  - name: Default
+    variables:
+      content: <iframe width="480" height="270" src="https://www.youtube.com/embed/7eSHN_KjEi4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+  - name: Change attributes and ratio
+    variables:
+      content: <iframe width="480" height="270" src="https://www.youtube.com/embed/7eSHN_KjEi4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+      ratio: "1-1"
+      attr:
+        class:
+          - test-attr
+
+overrides:
+  css: |
+    .test-attr { max-width: 500px; }
+
+readme: |
+  Liste des ratios "built-in" du composant :<br>
+    - 16/9<br>
+    - 1/1<br>
+  Si besoin d'un nouveau ratio, il faut l'ajouter à la feuille de style de la library "dargaud1/object-ratio".

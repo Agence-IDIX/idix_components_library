@@ -50,9 +50,9 @@ class StyleguideController extends ControllerBase {
         ]
       ],
       'list' => [
-        '#theme' => 'item_list',
-        '#items' => $links,
-        '#wrapper_attributes' => ['class' => ['icl_component-list']]
+        '#type' => 'container',
+        'links' => $links,
+        '#attributes' => ['class' => ['icl_component-list']]
       ],
       '#attached' => [
         'library' => [

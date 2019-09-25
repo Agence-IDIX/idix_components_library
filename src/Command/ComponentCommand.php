@@ -13,6 +13,7 @@ use Webmozart\PathUtil\Path;
 use Drupal\Console\Core\Utils\StringConverter;
 use Drupal\Console\Utils\Validator;
 use Drupal\Console\Command\Shared\ExtensionTrait;
+use Drupal\Console\Core\Utils\ChainQueue;
 
 /**
  * Class ComponentCommand.
@@ -49,6 +50,11 @@ class ComponentCommand extends ContainerAwareCommand {
   protected $validator;
 
   /**
+   * @var ChainQueue
+   */
+  protected $chainQueue;
+
+  /**
    * @var string
    */
   protected $appRoot;
@@ -61,12 +67,14 @@ class ComponentCommand extends ContainerAwareCommand {
     Manager $extensionManager,
     StringConverter $stringConverter,
     Validator $validator,
+    ChainQueue $chainQueue,
     $appRoot
   ) {
     $this->generator = $idix_components_library_idix_components_library_generate_component_generator;
     $this->extensionManager = $extensionManager;
     $this->stringConverter = $stringConverter;
     $this->validator = $validator;
+    $this->chainQueue = $chainQueue;
     $this->appRoot = $appRoot;
     parent::__construct();
   }
@@ -218,5 +226,7 @@ class ComponentCommand extends ContainerAwareCommand {
       'javascript' => $javascript,
       'javascript_object_name' => $this->createScriptObjectName($machineName)
     ]);
+
+    $this->chainQueue->addCommand('cr', ["all"]);
   }
 }

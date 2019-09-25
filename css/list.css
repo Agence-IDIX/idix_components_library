@@ -1,12 +1,10 @@
-.icl_component-list > ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding-left: 0;
+.icl_component-list {
+  display: grid;
+  margin-top: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .icl_component-list a {
-  display: block;
   padding: 5px;
 }
 

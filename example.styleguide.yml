@@ -1,35 +1,7 @@
-# Component with twig file
-name: 'WYSIWYG'
-variables:
-  -
-    name: 'wysiwyg_content'
-    type: string
-    description: Contenu HTML.
-    default: "'' (empty)"
-  -
-    name: 'lettrine'
-    type: boolean
-    description: Permet d'activer ou de désactiver la lettrine.
-    default: 'false'
+name: "Buttons"
 samples:
-  -
-    name: Default
-    variables:
-      wysiwyg_content: '<h2>Intertitre</h2><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic molestias minus eum dolores voluptates quia veritatis architecto voluptate ea! Laudantium aut tenetur natus vero ipsum laboriosam itaque incidunt veritatis atque.</p>'
-  -
-    name: Avec lettrine
-    variables:
-      lettrine: true
-      wysiwyg_content: '<h2>Intertitre</h2><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic molestias minus eum dolores voluptates quia veritatis architecto voluptate ea! Laudantium aut tenetur natus vero ipsum laboriosam itaque incidunt veritatis atque.</p>'
-
-
-# Component without twig file
-name: 'Buttons'
-samples:
-  -
-    name: Default
+  - name: Default
     template: |
       <button type="button" class="btn">Button</button>
       <button type="button" class="btn btn--primary">Button primary</button>
       <button type="button" class="btn btn--secondary">Button secondary</button>
-

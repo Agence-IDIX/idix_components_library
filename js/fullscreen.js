@@ -24,19 +24,31 @@
     this.button.classList.add("icl_fullscreen-button");
     this.button.addEventListener(
       "click",
-      this.toggleFullscreen.bind(this),
+      this.handleButtonClick.bind(this),
       false
     );
     this.element.appendChild(this.button);
+
+    document.addEventListener(
+      "fullscreenchange",
+      this.toggleFullscreen.bind(this),
+      false
+    );
   };
 
   FullscreenView.prototype.toggleFullscreen = function(event) {
+    if (document.fullscreenElement) {
+      this.button.innerHTML = "Réduire";
+    } else {
+      this.button.innerHTML = "Plein écran";
+    }
+  };
+
+  FullscreenView.prototype.handleButtonClick = function(event) {
     if (!document.fullscreenElement) {
       this.element.requestFullscreen();
-      this.button.innerHTML = "Réduire";
     } else if (document.exitFullscreen) {
       document.exitFullscreen();
-      this.button.innerHTML = "Plein écran";
     }
   };
 })(Drupal);

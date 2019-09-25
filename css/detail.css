@@ -73,7 +73,6 @@
   margin: 10px 0;
   background-color: #fff;
   box-shadow: 0 0 20px #e5e5e5;
-  border-radius: 5px;
 }
 
 .icl_component-sample_view {
@@ -81,12 +80,13 @@
   padding: 40px;
   background-color: #fff;
   box-shadow: 0 0 20px #e5e5e5;
-  border-radius: 5px;
+  border: 1px solid #e5e5e5;
 }
 
 .icl_readme {
   padding: 20px;
   background-color: #fff;
+  border: 1px solid #e5e5e5;
 }
 
 .icl_component-samples > ul {
