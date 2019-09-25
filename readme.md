@@ -171,12 +171,10 @@ Se placer à la racine du thème Drupal par défaut et lancer la commande :
 
 ```
 npm run build
-
 ```
 
 Un "watcher" est aussi disponible pour faciliter le développement.
 
 ```
 npm run watch
-
 ```
