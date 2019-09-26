@@ -159,9 +159,22 @@ class StyleguideController extends ControllerBase {
       ];
     }
 
-    $back_url = Url::fromRoute('idix_components_library.page');
-    $back_link = Link::fromTextAndUrl('Liste des composants', $back_url)->toRenderable();
-    $back_link['#attributes'] = ['class' => ['icl_back']];
+    $allComponents = $this->getAllComponents();
+    $nav_links = [];
+    foreach ($allComponents as $key => $value) {
+      $link_url = Url::fromRoute('idix_components_library.page', ['component_id' => $value['id']]);
+      $nav_links[] = Link::fromTextAndUrl($value['name'], $link_url)->toRenderable();
+    }
+    $components_nav = [
+      '#type' => 'details',
+      '#title' => 'Liste des composants',
+      '#open' => FALSE,
+      '#attributes' => ['class' => ['icl_nav']],
+      'links' => [
+        '#theme' => 'item_list',
+        '#items' => $nav_links
+      ]
+    ];
 
     return [
       '#type' => 'container',
@@ -171,7 +184,7 @@ class StyleguideController extends ControllerBase {
         '#attributes' => ['class' => ['icl_header']],
         'content' => [
           'title' => ['#markup' => '<h1>' . $component['name'] . '</h1>'],
-          'back' => $back_link,
+          'nav' => $components_nav,
         ]
       ],
       'overrides' => !empty($overrides) ? $overrides : [],
