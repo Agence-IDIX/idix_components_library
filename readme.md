@@ -104,6 +104,12 @@ Création d'un fichier javascript associé au composant. Ce dernier inclus un co
 
 ## Développement d'un composant
 
+A la fin du process de création du composant, un nouveau dossier est généré avec les fichiers demandés, et le composant sera directement accessible sur une url dédiée dans la bibliothèque :
+
+`[project_domain]/idix_components_library/[component-machine-name]`
+
+Exemple : https://dargaud.local/idix_components_library/buttons
+
 ### Structure du dossier composant
 
 - `[component].twig`
@@ -165,7 +171,7 @@ Il est structuré ainsi :
 
 ### Build
 
-[Gulp](https://gulpjs.com/) est utilisé comme "task runner" pour le builder les assets du thème (principalement la compilation des CSS via Sass).
+[Gulp](https://gulpjs.com/) est utilisé comme "task runner" pour builder les assets du thème (principalement la compilation des CSS via Sass).
 
 Se placer à la racine du thème Drupal par défaut et lancer la commande :
 
